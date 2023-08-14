@@ -1,4 +1,11 @@
-body,
 html {
-  background-color: green;
+  overscroll-behavior: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-behavior: smooth;
+  background-position: 0% 90%;
+}
+
+* {
+  box-sizing: border-box;
 }
