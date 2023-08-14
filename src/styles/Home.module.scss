@@ -1,0 +1,22 @@
+.hero {
+  margin: 0 5rem;
+  margin-top: 10rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 4rem 5rem;
+  border-radius: 1rem;
+  h1 {
+    font-size: 4rem;
+  }
+  div {
+    height: 1px;
+    width: 500px;
+    background-color: white;
+    margin: 2rem 0;
+  }
+  p {
+    margin-top: 3rem;
+    font-size: 22px;
+    line-height: 200%;
+  }
+}

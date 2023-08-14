@@ -1,5 +1,8 @@
+import React from "react";
 import Head from "next/head";
 import {Navbar} from "./components";
+import styles from "@/styles/Home.module.scss";
+import {nunitoBold, ptSans} from "@/styles/fonts";
 
 export default function Home() {
   return (
@@ -17,5 +20,19 @@ export default function Home() {
 }
 
 const Hero = () => {
-  return <div></div>;
+  return (
+    <div className={styles.hero}>
+      <h1 className={`${nunitoBold.className}`}>HUBERT KLIMCZAK</h1>
+      <div />
+      <p className={`${ptSans.className}`}>
+        Jestem Grafikiem Komputerowym/Ilustratorem z wielką pasją do sztuki i
+        komputerowego tworzenia. Stawiam na ciągły rozwój moich umiejętności
+        artystycznych, aby wspierać innowacyjność i doskonalić produkty. Lubię
+        eksperymentować z nowymi technikami i trendami, co pomaga mi tworzyć
+        unikalne dzieła sztuki. Moje prace zawsze dążą do doskonałości, a moja
+        otwarta mentalność pozwala mi odkrywać nowe sposoby wyrażania
+        kreatywności.
+      </p>
+    </div>
+  );
 };

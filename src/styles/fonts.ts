@@ -14,7 +14,7 @@ const nunito = Nunito({
 });
 const nunitoBold = Nunito({
   subsets: ["latin"],
-  weight: "500",
+  weight: "700",
 });
 
 export {ptSans, ptSansBold, nunito, nunitoBold};

@@ -1,11 +1,13 @@
-html,
 body {
   background-image: url("/krajobraz.png");
-  overscroll-behavior: none;
   background-repeat: no-repeat;
   background-size: cover;
   scroll-behavior: smooth;
   background-position: 0% 90%;
   min-height: 100vh;
   min-width: 360px;
+}
+
+html {
+  overscroll-behavior: none;
 }
