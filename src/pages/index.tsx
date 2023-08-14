@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import {Navbar} from "./components";
+import {Footer, Navbar} from "./components";
 import styles from "@/styles/Home.module.scss";
 import {nunitoBold, ptSans} from "@/styles/fonts";
 
@@ -16,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Gallery />
+      <Footer />
     </>
   );
 }
