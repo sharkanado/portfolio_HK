@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarDesktop}>
-        <nav className={styles.desktopNav}>
+        <nav>
           {navLinks.map(({name, link}, idx) => (
             <a
               key={idx}
@@ -54,7 +54,6 @@ const Navbar = () => {
         <div className="">
           <button
             ref={buttonRef}
-            className={styles.toggleNavBtn}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             toggle
@@ -62,7 +61,6 @@ const Navbar = () => {
         </div>
         <nav
           ref={menuRef}
-          className={styles.mobileNav}
           style={{
             height: isMenuOpen ? "10rem" : "0rem",
             marginTop: isMenuOpen ? "3rem" : "0rem",
