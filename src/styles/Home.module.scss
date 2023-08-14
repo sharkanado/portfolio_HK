@@ -1,10 +1,13 @@
-.hero {
-  margin: 0 5rem;
-  margin-top: 10rem;
+.section {
+  margin: 0 3rem;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 4rem 5rem;
   border-radius: 1rem;
+}
+
+.hero {
+  margin-top: 10rem;
   h1 {
     font-size: 4rem;
   }
@@ -18,5 +21,13 @@
     margin-top: 3rem;
     font-size: 22px;
     line-height: 200%;
+  }
+}
+
+.gallery {
+  margin-top: 5rem;
+  h2 {
+    font-size: 3rem;
+    text-align: center;
   }
 }

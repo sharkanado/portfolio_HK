@@ -15,13 +15,14 @@ export default function Home() {
       </Head>
       <Navbar />
       <Hero />
+      <Gallery />
     </>
   );
 }
 
 const Hero = () => {
   return (
-    <div className={styles.hero}>
+    <section className={`${styles.hero} ${styles.section}`}>
       <h1 className={`${nunitoBold.className}`}>HUBERT KLIMCZAK</h1>
       <div />
       <p className={`${ptSans.className}`}>
@@ -33,6 +34,14 @@ const Hero = () => {
         otwarta mentalność pozwala mi odkrywać nowe sposoby wyrażania
         kreatywności.
       </p>
-    </div>
+    </section>
+  );
+};
+
+const Gallery = () => {
+  return (
+    <section className={`${styles.gallery} ${styles.section}`}>
+      <h2 className={`${nunitoBold.className}`}>GALLERY</h2>
+    </section>
   );
 };
