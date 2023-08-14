@@ -1,10 +1,12 @@
 import React, {useEffect, useRef, useState} from "react";
 import styles from "@/styles/Navbar.module.scss";
+import {nunito} from "@/styles/fonts";
 
 const Navbar = () => {
   const navLinks = [
     {name: "home", link: "#"},
-    {name: "about", link: "#about"},
+    {name: "gallery", link: "#about"},
+    {name: "cv", link: "#about"},
     {name: "contact", link: "#contact"},
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +40,11 @@ const Navbar = () => {
       <div className={styles.navbarDesktop}>
         <nav className={styles.desktopNav}>
           {navLinks.map(({name, link}, idx) => (
-            <a key={idx} href={link} className={styles.navLink}>
+            <a
+              key={idx}
+              href={link}
+              className={`${styles.navLink} ${nunito.className}`}
+            >
               {name}
             </a>
           ))}
@@ -51,7 +57,7 @@ const Navbar = () => {
             className={styles.toggleNavBtn}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
-            x
+            toggle
           </button>
         </div>
         <nav
@@ -67,7 +73,7 @@ const Navbar = () => {
               <a
                 key={idx}
                 href={link}
-                className={styles.navLink}
+                className={`${styles.navLink} ${nunito.className}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {name}

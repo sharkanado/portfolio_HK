@@ -2,39 +2,39 @@ $md: 768px;
 
 .navLink {
   color: white;
+  font-size: 1.5rem;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .navLink:hover {
-  color: pink;
-  transition: color 0.3s ease;
+  color: orange;
+  transition: color 0.5s ease;
 }
 
 .navbarContainer {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
 
   .navbarDesktop {
     padding: 0 2rem;
     transition: all;
     background-color: rgba(0, 0, 0, 0.5);
+    justify-content: flex-end;
 
     .desktopNav {
-      gap: 1rem;
-      padding: 0 1rem;
-      margin: 0 auto;
-      justify-content: flex-end;
+      display: flex;
+      padding: 2rem 1rem;
+      gap: 2rem;
     }
   }
 
   .navbarMobile {
     flex-direction: column;
     align-items: flex-end;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
+
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
     .toggleNavBtn {
@@ -45,9 +45,10 @@ $md: 768px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
       padding: 0 1rem;
       margin: 0 auto;
+      margin-bottom: 1rem;
       justify-content: flex-end;
       transition: height 0.3s ease;
     }
