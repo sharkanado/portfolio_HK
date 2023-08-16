@@ -1,3 +1,10 @@
+.background {
+  background-image: url("/krajobraz.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+}
+
 .section {
   margin: 0 3rem;
   background-color: rgba(0, 0, 0, 0.5);
