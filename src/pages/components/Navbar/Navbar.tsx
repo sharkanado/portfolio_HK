@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
-import styles from "@/styles/Navbar.module.scss";
+import styles from "./Navbar.module.scss";
 import {nunito} from "@/styles/fonts";
 
 const Navbar = () => {
   const navLinks = [
-    {name: "home", link: "#"},
-    {name: "gallery", link: "#about"},
+    {name: "home", link: "/"},
+    {name: "gallery", link: "#gallery"},
     {name: "cv", link: "#about"},
     {name: "contact", link: "#contact"},
   ];

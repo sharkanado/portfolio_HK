@@ -10,3 +10,10 @@ html {
   min-width: 360px;
   overscroll-behavior: none;
 }
+
+body {
+  background-image: url("/krajobraz.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+}
