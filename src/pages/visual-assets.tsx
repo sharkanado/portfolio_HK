@@ -15,7 +15,7 @@ const photos = [
   },
 ];
 
-const DigitalArt = () => {
+const VisualIdentification = () => {
   return (
     <div>
       <Navbar />
@@ -28,4 +28,4 @@ const DigitalArt = () => {
     </div>
   );
 };
-export default DigitalArt;
+export default VisualIdentification;
