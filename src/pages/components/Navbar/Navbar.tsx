@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import {nunito} from "@/styles/fonts";
 
@@ -38,6 +39,14 @@ const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarDesktop}>
+        <div className={styles.navbarLogo}>
+          <Image
+            src="/logo.png"
+            alt="logo"
+            style={{objectFit: "contain"}}
+            fill
+          />
+        </div>
         <nav>
           {navLinks.map(({name, link}, idx) => (
             <a

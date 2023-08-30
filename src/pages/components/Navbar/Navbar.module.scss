@@ -12,6 +12,12 @@ $md: 768px;
   transition: color 0.5s ease;
 }
 
+.navbarLogo {
+  position: relative;
+  width: 90px;
+  height: 80px;
+}
+
 .navbarContainer {
   position: fixed;
   top: 0;
@@ -22,7 +28,7 @@ $md: 768px;
     padding: 0 2rem;
     transition: all;
     background-color: rgba(0, 0, 0, 0.7);
-    justify-content: flex-end;
+    justify-content: space-between;
 
     nav {
       display: flex;
