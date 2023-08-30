@@ -6,9 +6,9 @@ import {nunito} from "@/styles/fonts";
 const Navbar = () => {
   const navLinks = [
     {name: "home", link: "/"},
-    {name: "gallery", link: "#gallery"},
-    {name: "cv", link: "#about"},
-    {name: "contact", link: "#contact"},
+    {name: "gallery", link: "/#gallery"},
+    {name: "cv", link: "/#about"},
+    {name: "contact", link: "/#contact"},
   ];
 
   return (

@@ -6,8 +6,7 @@ const MainWrapper = ({children}: {children: React.ReactNode}) => {
   return (
     <div className={styles.mainWrapper}>
       <Navbar />
-
-      <div className={styles.childrenContainer}> {children}</div>
+      {children}
       <div className={styles.filler}></div>
       <Footer />
     </div>
