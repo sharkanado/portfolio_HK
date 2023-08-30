@@ -1,0 +1,14 @@
+.mainWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .filler {
+    flex: 1;
+  }
+
+  .childrenContainer {
+    max-width: 1526px;
+    margin: 0 auto;
+  }
+}

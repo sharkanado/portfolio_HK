@@ -1,18 +1,16 @@
 import React from "react";
-import {Footer, Gallery, Navbar} from "./components";
+import {Gallery, MainWrapper} from "./components";
 import styles from "../styles/Home.module.scss";
 
 const TraditionalArt = () => {
   return (
-    <div>
-      <Navbar />
+    <MainWrapper>
       <div style={{margin: "5rem 0"}}>
         <div className={styles.section}>
           <Gallery photos={photos} />
         </div>
       </div>
-      <Footer />
-    </div>
+    </MainWrapper>
   );
 };
 export default TraditionalArt;

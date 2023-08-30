@@ -4,7 +4,6 @@ import Lightbox from "yet-another-react-lightbox";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import "yet-another-react-lightbox/styles.css";
-import styles from "./Gallery.module.scss";
 
 type Photo = {
   src: string;
@@ -16,7 +15,7 @@ const Gallery = ({photos}: {photos: Photo[]}) => {
   const [index, setIndex] = useState(-1);
 
   return (
-    <div className={styles.galleryWrapper}>
+    <div>
       <PhotoAlbum
         photos={photos}
         layout="rows"
