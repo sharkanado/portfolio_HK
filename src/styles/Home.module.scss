@@ -31,4 +31,18 @@
     font-size: 3rem;
     text-align: center;
   }
+  .galleryLinksWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    a:hover {
+      color: orange;
+      transition: color 0.5s ease;
+    }
+  }
 }

@@ -2,7 +2,7 @@ import {PT_Sans, Nunito} from "next/font/google";
 
 const ptSans = PT_Sans({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
 });
 const ptSansBold = PT_Sans({
   subsets: ["latin"],

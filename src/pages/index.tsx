@@ -3,6 +3,7 @@ import Head from "next/head";
 import {Footer, Navbar} from "./components";
 import styles from "@/styles/Home.module.scss";
 import {nunitoBold, ptSans} from "@/styles/fonts";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -42,12 +43,22 @@ const Hero = () => {
 };
 
 const Gallery = () => {
+  const routes = [
+    {name: "Visual Assets", route: "/visual-assets"},
+    {name: "Traditional Art", route: "/traditional-art"},
+    {name: "Digital Art", route: "/digital-art"},
+  ];
   return (
     <section id="gallery" className={`${styles.gallery} ${styles.section}`}>
       <h2 className={`${nunitoBold.className}`}>GALLERY</h2>
-      <a href="/visual-identification">1</a>
-      <a href="/traditional-art">1</a>
-      <a href="/digital-art">1</a>
+
+      <div className={styles.galleryLinksWrapper}>
+        {routes.map(({name, route}, idx) => (
+          <Link className={styles.galleryLink} key={idx} href={route}>
+            {name}
+          </Link>
+        ))}
+      </div>
     </section>
   );
 };
