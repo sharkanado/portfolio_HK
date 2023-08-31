@@ -27,7 +27,7 @@ const TraditionalArt = ({pageContent}: {pageContent: Photo[]}) => {
   const photos = pageContent;
   return (
     <MainWrapper>
-      <div style={{margin: "5rem 0"}}>
+      <div className="galleryContainer">
         <div className={styles.section}>
           <Gallery photos={photos} />
         </div>
