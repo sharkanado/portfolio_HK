@@ -1,25 +1,14 @@
 import React from "react";
 import {Gallery, MainWrapper} from "./components";
 import styles from "../styles/Home.module.scss";
-import {GetStaticProps, InferGetStaticPropsType} from "next";
+import {GetStaticProps} from "next";
 import axios from "@/lib/axios";
+import {Photo} from "@/lib/types";
 
 export const getStaticProps: GetStaticProps = async () => {
   const result = await axios.get("/traditional-art?populate=*");
 
-  return {
-    props: {
-      pageContent: result.data,
-    },
-  };
-};
-
-const TraditionalArt = ({
-  pageContent,
-}: {
-  pageContent: InferGetStaticPropsType<typeof getStaticProps>;
-}) => {
-  const photosStrapi = pageContent.data.attributes.images.data;
+  const photosStrapi = result.data.data.attributes.images.data;
   console.log(photosStrapi);
   const photos = photosStrapi.map((obj: any) => ({
     src: `http://127.0.0.1:1337${obj.attributes.url}`,
@@ -27,7 +16,15 @@ const TraditionalArt = ({
     height: obj.attributes.height,
   }));
 
-  console.log(photos);
+  return {
+    props: {
+      pageContent: photos,
+    },
+  };
+};
+
+const TraditionalArt = ({pageContent}: {pageContent: Photo[]}) => {
+  const photos = pageContent;
   return (
     <MainWrapper>
       <div style={{margin: "5rem 0"}}>
