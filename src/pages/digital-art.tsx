@@ -1,21 +1,30 @@
 import React from "react";
 import {Gallery, MainWrapper} from "./components";
 import styles from "../styles/Home.module.scss";
+import {GetStaticProps} from "next";
+import axios from "@/lib/axios";
+import {Photo} from "@/lib/types";
 
-const photos = [
-  {
-    src: "https://images.pexels.com/photos/18128251/pexels-photo-18128251/free-photo-of-light-sea-dawn-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "https://images.pexels.com/photos/6753871/pexels-photo-6753871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    width: 1600,
-    height: 900,
-  },
-];
+export const getStaticProps: GetStaticProps = async () => {
+  const result = await axios.get("/digital-art?populate=*");
 
-const DigitalArt = () => {
+  const photosStrapi = result.data.data.attributes.images.data;
+  console.log(photosStrapi);
+  const photos = photosStrapi.map((obj: any) => ({
+    src: `http://127.0.0.1:1337${obj.attributes.url}`,
+    width: obj.attributes.width,
+    height: obj.attributes.height,
+  }));
+
+  return {
+    props: {
+      pageContent: photos,
+    },
+  };
+};
+
+const DigitalArt = ({pageContent}: {pageContent: Photo[]}) => {
+  const photos = pageContent;
   return (
     <MainWrapper>
       <div className="galleryContainer">
