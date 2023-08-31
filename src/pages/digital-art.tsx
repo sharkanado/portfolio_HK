@@ -6,12 +6,15 @@ import axios from "@/lib/axios";
 import {Photo} from "@/lib/types";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const result = await axios.get("/digital-art?populate=*");
-
+  const result = await axios.get("/traditional-art?populate=*");
+  const apiPath =
+    process.env.NODE_ENV === "development"
+      ? process.env.NEXT_PUBLIC_DEV_API_URL
+      : process.env.NEXT_PUBLIC_API_URL;
   const photosStrapi = result.data.data.attributes.images.data;
   console.log(photosStrapi);
   const photos = photosStrapi.map((obj: any) => ({
-    src: `http://127.0.0.1:1337${obj.attributes.url}`,
+    src: `${apiPath}${obj.attributes.url}`,
     width: obj.attributes.width,
     height: obj.attributes.height,
   }));
