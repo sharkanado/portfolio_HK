@@ -1,33 +1,15 @@
 import React from "react";
 import {Gallery, MainWrapper} from "./components";
 import styles from "../styles/Home.module.scss";
-import {GetStaticProps} from "next";
-import axios from "@/lib/axios";
-import {Photo} from "@/lib/types";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const result = await axios.get("/traditional-art?populate=*");
-  const apiPath =
-    process.env.NODE_ENV === "development"
-      ? process.env.NEXT_PUBLIC_DEV_API_URL
-      : process.env.NEXT_PUBLIC_API_URL;
-  const photosStrapi = result.data.data.attributes.images.data;
-  console.log(photosStrapi);
-  const photos = photosStrapi.map((obj: any) => ({
-    src: `${apiPath}${obj.attributes.url}`,
-    width: obj.attributes.width,
-    height: obj.attributes.height,
+const TraditionalArt = () => {
+  const images = require.context("../../public/traditional", true);
+  const imageList = images.keys().map((image) => images(image));
+  const photos = imageList.map((obj: any) => ({
+    src: obj.default.src,
+    width: obj.default.width,
+    height: obj.default.height,
   }));
-
-  return {
-    props: {
-      pageContent: photos,
-    },
-  };
-};
-
-const TraditionalArt = ({pageContent}: {pageContent: Photo[]}) => {
-  const photos = pageContent;
   return (
     <MainWrapper>
       <div className="galleryContainer">

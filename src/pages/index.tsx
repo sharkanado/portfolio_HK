@@ -4,25 +4,8 @@ import {MainWrapper} from "./components";
 import styles from "@/styles/Home.module.scss";
 import {nunitoBold, ptSans} from "@/styles/fonts";
 import Link from "next/link";
-import axios from "@/lib/axios";
-import {GetStaticProps, InferGetStaticPropsType} from "next";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const result = await axios.get("/about");
-
-  return {
-    props: {
-      pageContent: result.data,
-    },
-  };
-};
-
-const Home = ({
-  pageContent,
-}: {
-  pageContent: InferGetStaticPropsType<typeof getStaticProps>;
-}) => {
-  console.log(pageContent.data.attributes.about);
+const Home = () => {
   return (
     <MainWrapper>
       <Head>
@@ -31,7 +14,7 @@ const Home = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero about={pageContent.data.attributes.about} />
+      <Hero />
       <Gallery />
     </MainWrapper>
   );
@@ -39,12 +22,19 @@ const Home = ({
 
 export default Home;
 
-const Hero = ({about}: {about: string}) => {
+const Hero = () => {
   return (
     <section className={`${styles.hero} ${styles.section}`}>
       <h1 className={`${nunitoBold.className}`}>Hubert Klimczak</h1>
       <div />
-      <p className={`${ptSans.className}`}>{about}</p>
+      <p className={`${ptSans.className}`}>
+        Jestem grafikiem i ilustratorem z wielką pasją do sztuki i komputerowego
+        tworzenia. Stawiam na ciągły rozwój moich umiejętności artystycznych,
+        aby wspierać innowacyjność i doskonalić produkty. Lubię eksperymentować
+        z nowymi technikami i trendami, co pomaga mi tworzyć unikalne dzieła
+        sztuki. Moje prace zawsze dążą do doskonałości, a moja otwarta
+        mentalność pozwala mi odkrywać nowe sposoby wyrażania kreatywności.
+      </p>
     </section>
   );
 };
