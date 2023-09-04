@@ -41,18 +41,22 @@ const Hero = () => {
 
 const Gallery = () => {
   const routes = [
-    {name: "Visual Assets", route: "/visual-assets"},
-    {name: "Traditional Art", route: "/traditional-art"},
-    {name: "Digital Art", route: "/digital-art"},
+    {name: "Visual Assets", route: "/visual-assets", img: "/visual.png"},
+    {
+      name: "Traditional Art",
+      route: "/traditional-art",
+      img: "/traditional.png",
+    },
+    {name: "Digital Art", route: "/digital-art", img: "/digital.png"},
   ];
   return (
     <section id="gallery" className={`${styles.gallery} ${styles.section}`}>
       <h2 className={`${nunitoBold.className}`}>GALLERY</h2>
 
       <div className={styles.galleryLinksWrapper}>
-        {routes.map(({name, route}, idx) => (
-          <Link className={styles.galleryLink} key={idx} href={route}>
-            {name}
+        {routes.map(({img, route}, idx) => (
+          <Link key={idx} href={route}>
+            <img src={img} />
           </Link>
         ))}
       </div>

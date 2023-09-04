@@ -8,7 +8,7 @@
 
   @media (min-width: $md) {
     margin: 0 3rem;
-    padding: 4rem 5rem;
+    padding: 4rem;
   }
   border-radius: 1rem;
 }
@@ -50,10 +50,36 @@
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
+    @media (max-width: $lg) {
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+    }
     a {
       color: white;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 2.5rem;
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      text-transform: uppercase;
+      width: 250px;
+      height: 250px;
+      :hover {
+        scale: 1.2;
+      }
+      @media (max-width: $lg) {
+        width: 280px;
+        height: 280px;
+      }
+      @media (min-width: $xl) {
+        width: 310px;
+        height: 310px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
     }
     a:hover {
       color: orange;
