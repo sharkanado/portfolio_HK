@@ -7,7 +7,7 @@ const Navbar = () => {
   const navLinks = [
     {name: "home", link: "/"},
     {name: "gallery", link: "/#gallery"},
-    {name: "cv", link: "/#about"},
+    {name: "cv", link: "/Hubert-Klimczak-CV.pdf"},
     {name: "contact", link: "/#contact"},
   ];
 
