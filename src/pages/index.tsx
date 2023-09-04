@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import {MainWrapper} from "./components";
+import {MainWrapper} from "../components";
 import styles from "@/styles/Home.module.scss";
 import {nunitoBold, ptSans} from "@/styles/fonts";
 import Link from "next/link";

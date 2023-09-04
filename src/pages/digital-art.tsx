@@ -1,5 +1,5 @@
 import React from "react";
-import {Gallery, MainWrapper} from "./components";
+import {Gallery, MainWrapper} from "../components";
 import styles from "../styles/Home.module.scss";
 
 const DigitalArt = () => {
